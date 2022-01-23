@@ -1,12 +1,5 @@
 import React from 'react';
 import { Icon } from 'react-icons-kit';
-import {
-  ic_play_arrow,
-  ic_pause,
-  ic_stop,
-  ic_skip_next,
-  ic_skip_previous,
-} from 'react-icons-kit/md/';
 
 import { ProgressBar } from './ProgressBar';
 const axios = require('axios');
@@ -215,27 +208,23 @@ export class AudioPlayer extends React.Component {
           alignItems: 'center',
           justifyContent: 'space-between',
         }}>
-          <Icon
+          <div
             style={iconStyles}
-            icon={ic_skip_previous}
             onClick={this.handlePrevTrack}
             size={30}
           />
-          <Icon
+          <div
             style={iconStyles}
-            icon={this.state.isPlaying ? ic_pause : ic_play_arrow}
             onClick={this.handlePlay}
             size={30}
           />
-          <Icon
+          <div
             size={30}
             style={iconStyles}
-            icon={ic_stop}
             onClick={this.handleStop}
           />
-          <Icon
+          <div
             style={iconStyles}
-            icon={ic_skip_next}
             onClick={this.handleNextTrack}
             size={30}
           />
