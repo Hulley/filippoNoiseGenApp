@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import axios from "axios";
 import ReactDOM from 'react-dom';
 import anime from 'animejs/lib/anime.es.js';
@@ -57,7 +57,7 @@ class App extends React.Component {
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${lat}&lon=${long}&appid=${apiKey}`
     );
-    if(response.status == 200){
+    if(response.status === 200){
       var temp = response.data.main.temp
     }
     //  color

@@ -3,10 +3,6 @@ import React from 'react';
 require('../cursor.css')
 
 export class Cursor extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-
     render(){
         return (
           <div id="cursor" style={{
