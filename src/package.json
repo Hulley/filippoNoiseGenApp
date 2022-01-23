@@ -1,0 +1,29 @@
+{
+  "name": "react-audio-player-with-hooks",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "babel-plugin-root-import": "^6.6.0",
+    "prop-types": "15.7.2",
+    "react": "^16.8.3",
+    "react-app-rewired": "^2.1.9",
+    "react-dom": "16.8.3",
+    "react-icons-kit": "1.2.1",
+    "react-scripts": "^5.0.0",
+    "styled-components": "4.1.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
