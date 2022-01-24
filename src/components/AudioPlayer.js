@@ -1,17 +1,22 @@
-import React from 'react';
+ React from 'react';
 
 import { ProgressBar } from './ProgressBar';
 const axios = require('axios');
 
 const playlist = [
-  {id: 0, title: 'INTRO', url: require('../media/0.1 INTRO.wav')},
-  // {id: 1, title: 'QUARTO DI SECOLO',  url: require('../media/0.2 QUARTO DI SECOLO.wav')},
-  // {id: 2, title: 'ADDIO',  url: require('../media/0.3 ADDIO.wav')},
+  {id: 0, url: require('../media/0.1 INTRO.wav')},
+  {id: 1, url: require('../media/0.2 QUARTO DI SECOLO.wav')},
+  {id: 2, url: require('../media/0.3 ADDIO.wav')},
+  {id: 3, url: require('../media/0.5 DRUG FIENDS.wav')},
+  {id: 4, url: require('../media/0.6 NASCOSTO IN PIENA LUCE.wav')},
+  {id: 5, url: require('../media/0.7 SILENZIO E SOLITUDINE .wav')},
+  {id: 6, url: require('../media/0.8 INTERLUDIO.wav')},
+  {id: 7, url: require('../media/0.9 IN FONDO ALLORIZZONTE.wav')},
+  {id: 8, url: require('../media/0.9 lLI IN FONDO ALLORIZZONTE.wav')},
+  {id: 9, url: require('../media/0.10 SPLENDENTE AL BUIO.wav')},
+  {id: 10, url: require('../media/0.11 ROMA AL PARADISO.wav')},
+  {id: 11, url: require('../media/0.12 CORRENDO VERSO LA VITA CORRENDO VERSO LA MORTE [02].wav')},
 ]
-
-// const drivePlaylist = [
-//   {id: 0, title: 'INTRO', url: 'https://drive.google.com/file/d/11k9IYPusRnltamoNaCu8MeNa8_J3C7vA/view'},
-// ]
 
 const getSecondsToMinutesAndSeconds = time => {
   if (time === 0) {
