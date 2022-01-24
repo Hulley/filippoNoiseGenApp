@@ -194,6 +194,8 @@ export class AudioPlayer extends React.Component {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          background: 'rgba(0,0,0,.7)',
+          borderRadius: '.125rem'
         }}>
           {/* start counter */}
           <p style={{

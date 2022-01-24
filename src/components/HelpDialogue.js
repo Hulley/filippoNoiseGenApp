@@ -24,12 +24,15 @@ export class HelpDialogue extends React.Component {
             <div id="helpDialogue" style={{
                 opacity: 0,
                 padding: '.3rem',
+                paddingLeft: '.5rem',
+                paddingRight: '.5rem',
                 background: 'rgba(0,0,0,.7)',
                 fontSize: '.6rem',
                 position: 'absolute',
                 right: '1rem',
                 bottom: '1rem',
                 textAlign: 'left',
+                borderRadius: '.125rem'
             }}>
                 {
                     !this.state.helpShowing && 
