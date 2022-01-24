@@ -4,15 +4,15 @@ import { Icon } from 'react-icons-kit';
 import { ProgressBar } from './ProgressBar';
 const axios = require('axios');
 
-// const playlist = [
-//   {id: 0, title: 'INTRO', url: require('../media/0.1 INTRO.wav')},
-//   {id: 1, title: 'QUARTO DI SECOLO',  url: require('../media/0.2 QUARTO DI SECOLO.wav')},
-//   {id: 2, title: 'ADDIO',  url: require('../media/0.3 ADDIO.wav')},
-// ]
-
-const drivePlaylist = [
-  {id: 0, title: 'INTRO', url: 'https://drive.google.com/file/d/11k9IYPusRnltamoNaCu8MeNa8_J3C7vA/view'},
+const playlist = [
+  {id: 0, title: 'INTRO', url: require('../media/0.1 INTRO.wav')},
+  // {id: 1, title: 'QUARTO DI SECOLO',  url: require('../media/0.2 QUARTO DI SECOLO.wav')},
+  // {id: 2, title: 'ADDIO',  url: require('../media/0.3 ADDIO.wav')},
 ]
+
+// const drivePlaylist = [
+//   {id: 0, title: 'INTRO', url: 'https://drive.google.com/file/d/11k9IYPusRnltamoNaCu8MeNa8_J3C7vA/view'},
+// ]
 
 const getSecondsToMinutesAndSeconds = time => {
   if (time === 0) {
@@ -56,7 +56,7 @@ export class AudioPlayer extends React.Component {
 
     let source = audioContext.createBufferSource();
     let request = new XMLHttpRequest();
-    axios.get(drivePlaylist[this.state.currentTrack].url).then(response=>{
+    axios.get(playlist[this.state.currentTrack].url).then(response=>{
       audioContext.decodeAudioData(response, function(buffer) {
           console.log('debug');
           let myBuffer = buffer;
@@ -120,7 +120,7 @@ export class AudioPlayer extends React.Component {
   };
   handleNextTrack = () => {
     console.log('next track');
-    if (this.state.currentTrack === drivePlaylist.length - 1) {
+    if (this.state.currentTrack === playlist.length - 1) {
       this.setState({currentTrack: 0});
     } else {
       this.setState({currentTrack: this.state.currentTrack + 1});
@@ -132,7 +132,7 @@ export class AudioPlayer extends React.Component {
   };
   handlePrevTrack = () => {
     if (this.state.currentTrack === 0) {
-      this.setState({currentTrack: drivePlaylist.length - 1});
+      this.setState({currentTrack: playlist.length - 1});
     } else {
       this.setState({currentTrack: this.state.currentTrack - 1});
     }
@@ -200,7 +200,7 @@ export class AudioPlayer extends React.Component {
           onLoadedMetadata={this.handleMetadata}
           onTimeUpdate={() => this.handleTimeupdate()}
         >
-          <source src={drivePlaylist[this.state.currentTrack].url} type="audio/ogg" />
+          <source src={playlist[this.state.currentTrack].url} type="audio/ogg" />
           Ooops, your browser is sooo old.
         </audio>
         <div style={{
