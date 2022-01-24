@@ -190,31 +190,11 @@ export class AudioPlayer extends React.Component {
           <source src={playlist[this.state.currentTrack].url} type="audio/ogg" />
           Ooops, your browser is sooo old.
         </audio>
-        {/* <div style={{
+        <div style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
         }}>
-          <div
-            style={iconStyles}
-            onClick={this.handlePrevTrack}
-            size={30}
-          />
-          <div
-            style={iconStyles}
-            onClick={this.handlePlay}
-            size={30}
-          />
-          <div
-            size={30}
-            style={iconStyles}
-            onClick={this.handleStop}
-          />
-          <div
-            style={iconStyles}
-            onClick={this.handleNextTrack}
-            size={30}
-          />
           {/* start counter */}
           <p style={{
             fontSize: '0.65rem',
@@ -231,7 +211,7 @@ export class AudioPlayer extends React.Component {
             color: '#472f90',
           }}>{this.state.currentTrackDuration || '0 : 00'}
           </p>
-        </div> */}
+        </div>
       </div>
     );
   }
