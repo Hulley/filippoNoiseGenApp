@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from 'react-icons-kit';
 
 import { ProgressBar } from './ProgressBar';
 const axios = require('axios');
