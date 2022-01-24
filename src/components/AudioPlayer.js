@@ -54,24 +54,7 @@ export class AudioPlayer extends React.Component {
     this.setState({audioPlayer: audioPlayer});
     const audioContext = this.props.audioContext;
 
-    console.log(audioPlayer);
-    // const source = audioContext.createMediaElementSource(audioPlayer);
-    // console.log(audioPlayer.buffered);
-
-    let source = audioContext.createBufferSource();
-    let request = new XMLHttpRequest();
-    axios.get(playlist[this.state.currentTrack].url).then(response=>{
-      audioContext.decodeAudioData(response, function(buffer) {
-          console.log('debug');
-          let myBuffer = buffer;
-          source.buffer = myBuffer;
-          source.playbackRate.value = this.state.playbackRate;
-          source.connect(audioContext.destination);
-          source.loop = true;
-          console.log(audioContext);
-        });
-    })
-
+    const source = audioContext.createMediaElementSource(audioPlayer);
     var filter = audioContext.createBiquadFilter(audioContext.LOWPASS);
     source.connect(filter);
     filter.connect(audioContext.destination);
@@ -207,7 +190,7 @@ export class AudioPlayer extends React.Component {
           <source src={playlist[this.state.currentTrack].url} type="audio/ogg" />
           Ooops, your browser is sooo old.
         </audio>
-        <div style={{
+        {/* <div style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -248,7 +231,7 @@ export class AudioPlayer extends React.Component {
             color: '#472f90',
           }}>{this.state.currentTrackDuration || '0 : 00'}
           </p>
-        </div>
+        </div> */}
       </div>
     );
   }
